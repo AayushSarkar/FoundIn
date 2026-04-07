@@ -78,7 +78,7 @@
 
 import axios from "axios";
 
-const BASE_URL = "https://foundin.onrender.com/api";
+const BASE_URL = "http://localhost:5000/api";
 
 // 🔑 COMMON CONFIG
 const getAuthHeader = () => ({

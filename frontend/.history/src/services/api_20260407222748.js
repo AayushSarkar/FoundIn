@@ -78,7 +78,7 @@
 
 import axios from "axios";
 
-const BASE_URL = "https://foundin.onrender.com/api";
+const BASE_URL = "http://localhost:5000/api";
 
 // 🔑 COMMON CONFIG
 const getAuthHeader = () => ({
@@ -101,7 +101,7 @@ export const registerUser = async (data) => {
 
 export const getDashboard = async () => {
   const res = await axios.get(
-    `${BASE_URL}/dashboard/details`,
+    "${BASE_URL}/dashboard/details",
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
