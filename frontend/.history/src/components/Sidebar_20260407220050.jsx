@@ -90,14 +90,14 @@ export default function Sidebar({ role, handleLogout }) {
     ],
     investor: [
       { name: "Explore", icon: <LayoutDashboard size={20} />, path: "/dashboard" },
-      { name: "My Network", icon: <Users size={20} />, path: "/mynetwork" },
+      { name: "My Network", icon: <Users size={20} />, path: "/network" },
       { name: "Profile", icon: <CircleUser size={20} />, path: "/profile" }
     ],
     entrepreneur: [
       { name: "Explore", icon: <LayoutDashboard size={20} />, path: "/dashboard" },
       { name: "Funding", icon: <DollarSign size={20} />, path: "/funding" },
       { name: "Analysis", icon: <BarChart2 size={20} />, path: "/analysis" },
-      { name: "My Network", icon: <Users size={20} />, path: "/mynetwork" },
+      { name: "My Network", icon: <Users size={20} />, path: "/network" },
       { name: "Profile", icon: <CircleUser size={20} />, path: "/profile" }
     ]
   };

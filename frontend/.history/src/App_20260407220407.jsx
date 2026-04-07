@@ -32,7 +32,7 @@ function App() {
         <Route path="/analysis" element={<Analytics />} />
 
         {/* ✅ FIXED ROUTE (matches sidebar) */}
-        <Route path="/mynetwork" element={<Network />} />
+        <Route path="/network" element={<Network />} />
 
         {/* OPTIONAL: fallback route */}
         <Route path="*" element={<LandingPage />} />

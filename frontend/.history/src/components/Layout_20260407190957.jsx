@@ -1,6 +1,7 @@
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../services/api";
 import API from "../services/api";
 
 export default function Layout({ children }) {
