@@ -42,10 +42,11 @@ export default function ChatBubble() {
     script1.id = "botpress-script";
 
     // https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/04/22/13/20260422134319-LKUJO5A2.json
+    // https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DVO9PN.json
 
     const script2 = document.createElement("script");
     script2.src =
-      "https://files.bpcontent.cloud/2026/04/22/13/20260422134319-LKUJO5A2.js";
+      "https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DVO9PN.js";
     script2.defer = true;
 
     // ✅ Load script2 AFTER script1
