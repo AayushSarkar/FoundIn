@@ -36,20 +36,24 @@ export default function ChatBubble() {
   useEffect(() => {
     if (window.botpressWebChat) return;
 
-    const script1 = document.createElement("script");
-    script1.src = "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
-    script1.async = true;
+    const loadBot = async () => {
+      const script1 = document.createElement("script");
+      script1.src = "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
+      script1.async = true;
 
-    script1.onload = () => {
-      const script2 = document.createElement("script");
-      script2.src =
-        "https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DVO9PN.js";
-      script2.defer = true;
+      script1.onload = () => {
+        const script2 = document.createElement("script");
+        script2.src =
+          "https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DVO9PN.js";
+        script2.defer = true;
 
-      document.body.appendChild(script2);
+        document.body.appendChild(script2);
+      };
+
+      document.body.appendChild(script1);
     };
 
-    document.body.appendChild(script1);
+    loadBot();
   }, []);
 
   return null;
