@@ -41,9 +41,11 @@ export default function ChatBubble() {
     script1.async = true;
     script1.id = "botpress-script";
 
+    // https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/04/22/13/20260422134319-LKUJO5A2.json
+
     const script2 = document.createElement("script");
     script2.src =
-      "https://files.bpcontent.cloud/2026/04/07/16/20260407164540-JJXZ2WSH.js";
+      "https://files.bpcontent.cloud/2026/04/22/13/20260422134319-LKUJO5A2.js";
     script2.defer = true;
 
     // ✅ Load script2 AFTER script1
