@@ -59,22 +59,56 @@
 //   return null;
 // }
 
+import { useState } from "react";
+
 export default function ChatBubble() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <iframe
-      src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/09/18/20260509180548-IXJLFY6S.json"
-      style={{
-        position: "fixed",
-        bottom: "20px",
-        right: "20px",
-        width: "400px",
-        height: "600px",
-        border: "none",
-        zIndex: 999999,
-        borderRadius: "16px",
-      }}
-      title="AI Chat"
-    />
+    <>
+      {/* CHAT WINDOW */}
+      {open && (
+        <iframe
+          src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/09/18/20260509180548-IXJLFY6S.json"
+          title="AI Chat"
+          style={{
+            position: "fixed",
+            bottom: "90px",
+            right: "20px",
+            width: "370px",
+            height: "550px",
+            border: "none",
+            borderRadius: "20px",
+            zIndex: 999999,
+            boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
+            background: "white",
+          }}
+        />
+      )}
+
+      {/* FLOATING BUTTON */}
+      <button
+        onClick={() => setOpen(!open)}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          width: "65px",
+          height: "65px",
+          borderRadius: "50%",
+          border: "none",
+          background: "linear-gradient(135deg, #2563eb, #3b82f6)",
+          color: "white",
+          fontSize: "28px",
+          cursor: "pointer",
+          zIndex: 1000000,
+          boxShadow: "0 6px 20px rgba(37,99,235,0.4)",
+          transition: "0.3s",
+        }}
+      >
+        {open ? "✕" : "💬"}
+      </button>
+    </>
   );
 }
 
