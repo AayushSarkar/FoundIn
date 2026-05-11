@@ -30,30 +30,58 @@
 //   return null; // no UI needed
 // }
 
+// import { useEffect } from "react";
+
+// export default function ChatBubble() {
+//   useEffect(() => {
+//     if (window.botpressWebChat) return;
+
+//     const loadBot = async () => {
+//       const script1 = document.createElement("script");
+//       script1.src = "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
+//       script1.async = true;
+
+//       script1.onload = () => {
+//         const script2 = document.createElement("script");
+//         script2.src =
+//           "https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DVO9PN.js";
+//         script2.defer = true;
+
+//         document.body.appendChild(script2);
+//       };
+
+//       document.body.appendChild(script1);
+//     };
+
+//     loadBot();
+//   }, []);
+
+//   return null;
+// }
+
 import { useEffect } from "react";
 
 export default function ChatBubble() {
   useEffect(() => {
-    if (window.botpressWebChat) return;
+    const injectScript = document.createElement("script");
 
-    const loadBot = async () => {
-      const script1 = document.createElement("script");
-      script1.src = "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
-      script1.async = true;
+    injectScript.src =
+      "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
 
-      script1.onload = () => {
-        const script2 = document.createElement("script");
-        script2.src =
-          "https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DVO9PN.js";
-        script2.defer = true;
+    injectScript.async = true;
 
-        document.body.appendChild(script2);
-      };
+    injectScript.onload = () => {
+      const botScript = document.createElement("script");
 
-      document.body.appendChild(script1);
+      botScript.src =
+        "https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DV09PN.js";
+
+      botScript.async = true;
+
+      document.body.appendChild(botScript);
     };
 
-    loadBot();
+    document.body.appendChild(injectScript);
   }, []);
 
   return null;
