@@ -59,30 +59,23 @@
 //   return null;
 // }
 
-import { useEffect } from "react";
-
 export default function ChatBubble() {
-  useEffect(() => {
-    const injectScript = document.createElement("script");
-
-    injectScript.src =
-      "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
-
-    injectScript.async = true;
-
-    injectScript.onload = () => {
-      const botScript = document.createElement("script");
-
-      botScript.src =
-        "https://files.bpcontent.cloud/2026/04/22/14/20260422142202-H3DV09PN.js";
-
-      botScript.async = true;
-
-      document.body.appendChild(botScript);
-    };
-
-    document.body.appendChild(injectScript);
-  }, []);
-
-  return null;
+  return (
+    <iframe
+      src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/09/18/20260509180548-IXJLFY6S.json"
+      style={{
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        width: "400px",
+        height: "600px",
+        border: "none",
+        zIndex: 999999,
+        borderRadius: "16px",
+      }}
+      title="AI Chat"
+    />
+  );
 }
+
+
